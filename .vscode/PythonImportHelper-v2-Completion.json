@@ -1,0 +1,74 @@
+[
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "mediapipe",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mediapipe",
+        "description": "mediapipe",
+        "detail": "mediapipe",
+        "documentation": {}
+    },
+    {
+        "label": "pyautogui",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyautogui",
+        "description": "pyautogui",
+        "detail": "pyautogui",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "cap",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "cap = cv2.VideoCapture(0)\nhand_detector = mp.solutions.hands.Hands()\ndrawing_utils = mp.solutions.drawing_utils\nscreen_width, screen_height = pyautogui.size()\nindex_y = 0\nwhile True:\n    _, frame = cap.read()\n    frame = cv2.flip(frame, 1)\n    frame_height, frame_width, _ = frame.shape\n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "hand_detector",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "hand_detector = mp.solutions.hands.Hands()\ndrawing_utils = mp.solutions.drawing_utils\nscreen_width, screen_height = pyautogui.size()\nindex_y = 0\nwhile True:\n    _, frame = cap.read()\n    frame = cv2.flip(frame, 1)\n    frame_height, frame_width, _ = frame.shape\n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    output = hand_detector.process(rgb_frame)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "drawing_utils",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "drawing_utils = mp.solutions.drawing_utils\nscreen_width, screen_height = pyautogui.size()\nindex_y = 0\nwhile True:\n    _, frame = cap.read()\n    frame = cv2.flip(frame, 1)\n    frame_height, frame_width, _ = frame.shape\n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    output = hand_detector.process(rgb_frame)\n    hands = output.multi_hand_landmarks",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "index_y",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "index_y = 0\nwhile True:\n    _, frame = cap.read()\n    frame = cv2.flip(frame, 1)\n    frame_height, frame_width, _ = frame.shape\n    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    output = hand_detector.process(rgb_frame)\n    hands = output.multi_hand_landmarks\n    if hands:\n        for hand in hands:",
+        "detail": "main",
+        "documentation": {}
+    }
+]
